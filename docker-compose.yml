@@ -1,0 +1,15 @@
+# Docker Compose File version
+version: "3"
+
+# service called app and the build section of the config
+# volume : make updates into docker image, run real time
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./app:/app
+    command: >
+      sh -c "python manage.py runserver 0.0.0.0:8000"
