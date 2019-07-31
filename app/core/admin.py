@@ -9,7 +9,7 @@ class UserAdmin(BaseUserAdmin):
     ordering = ['id']
     list_display = ['email', 'name']
     fieldsets = (
-        (None, {'fields': ('email', 'password')}), # title of section
+        (None, {'fields': ('email', 'password')}),  # title of section
         (_('Personal Info'), {'fields': ('name',)}),
         (
             _('Permission'),
@@ -19,9 +19,9 @@ class UserAdmin(BaseUserAdmin):
     )
     add_fieldsets = (
         (None, {
-            'classes': ('wide'),
+            'classes': ('wide',),
             'fields': ('email', 'password1', 'password2')
-        })
+        }),
     )
 
 
